@@ -1,0 +1,6 @@
+﻿# action.yml
+name: 'TCAdmin Module Packager'
+description: 'Create a Packaged TCAdmin module.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
