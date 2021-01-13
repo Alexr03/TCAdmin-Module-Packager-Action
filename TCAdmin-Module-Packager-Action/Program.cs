@@ -18,7 +18,7 @@ namespace TCAdmin_Module_Packager_Action
 
             // Base Directory
             Directory.CreateDirectory("./outputdeployment/Monitor");
-            var config = JsonConvert.DeserializeObject<JObject>("Module.json");
+            var config = JsonConvert.DeserializeObject<JObject>(File.ReadAllText("Module.json"));
             if (Directory.Exists("./Views/Default"))
             {
                 CopyDirectory("./Views", "./outputdeployment/Views");
