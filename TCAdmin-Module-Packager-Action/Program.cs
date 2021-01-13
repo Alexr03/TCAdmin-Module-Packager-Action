@@ -32,11 +32,11 @@ namespace TCAdmin_Module_Packager_Action
             var config = JsonConvert.DeserializeObject<JObject>(File.ReadAllText("Module.json"));
             if (Directory.Exists("./Views/Default"))
             {
-                CopyDirectory("./Views", "./outputdeployment/Views");
+                CopyDirectory("./Views/Default", "./outputdeployment/Views/Default");
             }
             else
             {
-                CopyDirectory("./Views/Default", "./outputdeployment/Views/Default");
+                CopyDirectory("./Views", "./outputdeployment/Views");
             }
             
             Log.Information("Copying Module.json");
