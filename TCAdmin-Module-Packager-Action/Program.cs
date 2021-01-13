@@ -50,8 +50,8 @@ namespace TCAdmin_Module_Packager_Action
                 foreach (var dependency in dependencies)
                 {
                     Log.Information("Copying Dependency - " + Path.GetFileName(dependency));
-                    File.Copy($"./bin/Debug/{Path.GetFileName("dependency")}", $"./outputdeployment/{Path.GetFileName(dependency)}", true);
-                    File.Copy($"./bin/Debug/{Path.GetFileName("dependency")}", $"./outputdeployment/Monitor/{Path.GetFileName(dependency)}", true);
+                    File.Copy($"./bin/Debug/{Path.GetFileName(dependency)}", $"./outputdeployment/{Path.GetFileName(dependency)}", true);
+                    File.Copy($"./bin/Debug/{Path.GetFileName(dependency)}", $"./outputdeployment/Monitor/{Path.GetFileName(dependency)}", true);
                 }
 
             foreach (var file in Directory.GetFiles("./", "*.sql"))
