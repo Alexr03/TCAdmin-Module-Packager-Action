@@ -16,6 +16,17 @@ namespace TCAdmin_Module_Packager_Action
             Log.Information("TCAdmin - The Game Hosting Control Panel");
             Log.Information("Running Module Packager");
 
+            var currentDirectory = Directory.GetCurrentDirectory();
+            Log.Information(currentDirectory);
+            foreach (var directory in Directory.GetDirectories(currentDirectory))
+            {                
+                Log.Information(directory + ": ");
+                foreach (var s in Directory.GetDirectories(directory))
+                {
+                    Log.Information(s);
+                }
+                Log.Information("-------------------");
+            }
             // Base Directory
             Directory.CreateDirectory("./outputdeployment/Monitor");
             var config = JsonConvert.DeserializeObject<JObject>(File.ReadAllText("Module.json"));
