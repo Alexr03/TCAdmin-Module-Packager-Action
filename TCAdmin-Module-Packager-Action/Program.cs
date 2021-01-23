@@ -58,7 +58,6 @@ namespace TCAdmin_Module_Packager_Action
             {
                 Log.Information("Copying SQL - " + Path.GetFileName(file));
                 File.Copy(file, $"./outputdeployment/{Path.GetFileName(file)}", true);
-                File.Copy(file, $"./outputdeployment/Monitor/{Path.GetFileName(file)}", true);
             }
             
             ZipFile.CreateFromDirectory("./outputdeployment", "./output.zip", CompressionLevel.Optimal, false);
